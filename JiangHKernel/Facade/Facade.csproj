@@ -8,7 +8,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\JiangHUnity\Assets\Kernels</OutputPath>
+    <OutputPath>..\..\JiangHUnity\Assets\StreamingAssets\Kernels</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

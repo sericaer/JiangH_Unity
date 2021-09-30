@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="800,600">
+  <displayList>
+    <component id="n0_qb2s" name="n0" src="qb2s1" fileName="Button1.xml" xy="0,0" size="100,120">
+      <Button title="测试"/>
+    </component>
+  </displayList>
+</component>
