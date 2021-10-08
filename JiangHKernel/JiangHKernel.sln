@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Branch", "Branch\Branch.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Date", "Date\Date.csproj", "{881506F5-4646-4D6E-A2A4-1C9779692AE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Society", "Society\Society.csproj", "{538E5822-D942-45E4-8D43-D2A1453243AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Society", "Society\Society.csproj", "{538E5822-D942-45E4-8D43-D2A1453243AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{FC64005E-E5C9-4C23-BC4D-0D56639FB8EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{538E5822-D942-45E4-8D43-D2A1453243AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{538E5822-D942-45E4-8D43-D2A1453243AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{538E5822-D942-45E4-8D43-D2A1453243AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC64005E-E5C9-4C23-BC4D-0D56639FB8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC64005E-E5C9-4C23-BC4D-0D56639FB8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC64005E-E5C9-4C23-BC4D-0D56639FB8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC64005E-E5C9-4C23-BC4D-0D56639FB8EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,44 +11,11 @@ public class MainScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var DLL = Assembly.LoadFile($"{Application.streamingAssetsPath}/Mods/Core/dll/netstandard2.0/Core.dll");
+        var modMgr = new ModManager(new KernelAssembly($"{Application.streamingAssetsPath}/Kernels/netstandard2.0/"),
+            $"{Application.streamingAssetsPath}/Mods/");
 
-        var MainSceneType = DLL.GetType("Core.UI.Scene.MainScene");
-
-        var c = Activator.CreateInstance(MainSceneType);
-
-        var componetName = MainSceneType.GetProperty("componetName").GetValue(c) as string;
-
-        var path = $"{Application.streamingAssetsPath}/Mods/Core/ui/Package_fui.bytes";
-
-        var bytes = File.ReadAllBytes(path);
-
-        UIPackage.LoadResource loadResource = (string name, string extension, System.Type type, out DestroyMethod destroyMethod) =>
-        {
-            destroyMethod = DestroyMethod.Destroy;
-
-            var path = Application.streamingAssetsPath + "/Study/" + name + extension;
-
-            if (!File.Exists(path))
-            {
-                Debug.LogWarning("Can not find file " + path);
-                return null;
-            }
-
-            byte[] bytes = System.IO.File.ReadAllBytes(path);
-
-            Texture2D texture = new Texture2D(1, 1);
-            texture.LoadImage(bytes);
-
-            return texture;
-        };
-
-        var assetNamePrefix = Path.GetFileNameWithoutExtension(path).Replace("_fui", "");
-
-        UIPackage.AddPackage(bytes, assetNamePrefix, loadResource);
-
-        var com = UIPackage.CreateObject(assetNamePrefix, componetName).asCom;
-        GRoot.inst.AddChild(com);
+        var sceneObj = modMgr.core.CreateScene(nameof(MainScene));
+        GRoot.inst.AddChild(sceneObj.ui);
     }
 
     // Update is called once per frame
@@ -56,4 +23,5 @@ public class MainScene : MonoBehaviour
     {
         
     }
+
 }

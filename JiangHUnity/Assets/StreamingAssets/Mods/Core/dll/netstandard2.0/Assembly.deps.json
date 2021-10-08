@@ -7,13 +7,13 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "Core/1.0.0": {
+      "Assembly/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "GUI": "1.0.0.0"
         },
         "runtime": {
-          "Core.dll": {}
+          "Assembly.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
@@ -33,7 +33,7 @@
     }
   },
   "libraries": {
-    "Core/1.0.0": {
+    "Assembly/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
