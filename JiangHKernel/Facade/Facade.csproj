@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Date\Date.csproj" />
     <ProjectReference Include="..\Entity\Entity.csproj" />
     <ProjectReference Include="..\GMSystem\GMSystem.csproj" />
+    <ProjectReference Include="..\GUI\GUI.csproj" />
     <ProjectReference Include="..\Interface\Interface.csproj" />
     <ProjectReference Include="..\Person\Person.csproj" />
     <ProjectReference Include="..\Relation\Relation.csproj" />

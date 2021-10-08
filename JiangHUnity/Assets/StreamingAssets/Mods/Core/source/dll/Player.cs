@@ -1,7 +1,13 @@
 ﻿namespace Core.UI.Componet
 {
-    [JiangH.GUI.Component("Player")]
     public class Player
     {
+        [JiangH.GUI.Text("Name")]
+        public string name { get; set; }
+
+        public void OnClick()
+        {
+
+        }
     }
 }

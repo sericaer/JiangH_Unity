@@ -11,7 +11,9 @@ public class MainScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var modMgr = new ModManager(new KernelAssembly($"{Application.streamingAssetsPath}/Kernels/netstandard2.0/"),
+        var kernelDll = new KernelAssembly($"{Application.streamingAssetsPath}/Kernels/netstandard2.0/");
+
+        var modMgr = new ModManager(kernelDll,
             $"{Application.streamingAssetsPath}/Mods/");
 
         var sceneObj = modMgr.core.CreateScene(nameof(MainScene));

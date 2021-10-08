@@ -11,6 +11,7 @@ class ModManager
     public ModManager(KernelAssembly kernelAssembly, string path)
     {
         Mod.kernelAssembly = kernelAssembly;
+        ModElem.kernelAssembly = kernelAssembly;
 
         core = new Mod(path + "/Core/");
     }
@@ -99,8 +100,10 @@ class Mod
 
 }
 
-public class ModElem
+class ModElem
 {
+    public static KernelAssembly kernelAssembly;
+
     public string packageName { get; private set; }
     public string name { get; private set; }
     public object logic { get; private set; }
@@ -112,6 +115,30 @@ public class ModElem
             if(_ui == null)
             {
                 _ui = UIPackage.CreateObject(packageName, name).asCom;
+
+                foreach(var property in logic.GetType().GetProperties())
+                {
+                    var btnAttrib = property.GetCustomAttribute(kernelAssembly.ButtonAttribType);
+                    if(btnAttrib != null)
+                    {
+                        var btnName = kernelAssembly.ButtonAttribType.GetProperty("name").GetValue(btnAttrib) as string;
+                        var btnUI = _ui.GetChild(btnName).asButton;
+
+                        foreach(var sub in property.PropertyType.GetProperties())
+                        {
+                            var textAttrib = sub.GetCustomAttribute(kernelAssembly.TextAttribType);
+                            if (textAttrib != null)
+                            {
+                                btnUI.text = sub.GetValue(property.GetValue(logic)) as String;
+                            }
+                        }
+                    }
+                }
+
+                //foreach (var child in _ui.GetChildren())
+                //{
+                //    if(child.name)
+                //}
             }
 
             return _ui;

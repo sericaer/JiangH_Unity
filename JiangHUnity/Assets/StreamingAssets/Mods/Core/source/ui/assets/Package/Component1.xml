@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="800,600">
+<component size="249,152">
   <displayList>
     <component id="n0_qb2s" name="Player" src="qb2s1" fileName="Button1.xml" xy="0,0" size="100,120">
       <Button title="测试"/>
     </component>
+    <component id="n2_gj5p" name="n2" src="qb2s1" fileName="Button1.xml" xy="149,132"/>
   </displayList>
 </component>

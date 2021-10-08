@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <OutputPath>../../dll</OutputPath>
+  </PropertyGroup>
+
+	<PropertyGroup>
+	  <DefaultItemExcludes>$*.meta</DefaultItemExcludes>
+	  <RootNamespace>Core</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove=".gitignore" />
+	  <None Remove="*.meta" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GUI">
+      <HintPath>..\..\..\..\Kernels\netstandard2.0\GUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Interface">
+      <HintPath>..\..\..\..\Kernels\netstandard2.0\Interface.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
